@@ -3,6 +3,7 @@ import { formatKRW, formatPct } from "@/lib/formatters"
 
 interface ResultsCardProps {
   title: string
+  rubInput: number
   krwOut: number
   effRate: number
   lossPct: number
@@ -10,7 +11,7 @@ interface ResultsCardProps {
   variant: "ideal" | "p2p" | "korona"
 }
 
-export function ResultsCard({ title, krwOut, effRate, lossPct, lossKrw, variant }: ResultsCardProps) {
+export function ResultsCard({ title, rubInput, krwOut, effRate, lossPct, lossKrw, variant }: ResultsCardProps) {
   const getVariantStyles = () => {
     switch (variant) {
       case "ideal":
@@ -30,6 +31,11 @@ export function ResultsCard({ title, krwOut, effRate, lossPct, lossKrw, variant 
         <CardTitle className="text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
+        <div>
+          <div className="text-sm text-muted-foreground">RUB Input</div>
+          <div className="text-xl font-semibold">{rubInput.toLocaleString()} ₽</div>
+        </div>
+
         <div>
           <div className="text-sm text-muted-foreground">KRW Output</div>
           <div className="text-2xl font-bold">{formatKRW(krwOut)}</div>

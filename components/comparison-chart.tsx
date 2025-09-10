@@ -5,19 +5,23 @@ interface ComparisonChartProps {
   midKrwOut: number
   p2pKrwOut: number
   koronaKrwOut: number
+  gmoneyKrwOut: number
   p2pLossPct: number
   koronaLossPct: number
+  gmoneyLossPct: number
 }
 
 export function ComparisonChart({
   midKrwOut,
   p2pKrwOut,
   koronaKrwOut,
+  gmoneyKrwOut,
   p2pLossPct,
   koronaLossPct,
+  gmoneyLossPct,
 }: ComparisonChartProps) {
-  const maxKrwOut = Math.max(midKrwOut, p2pKrwOut, koronaKrwOut)
-  const maxLoss = Math.max(p2pLossPct, koronaLossPct)
+  const maxKrwOut = Math.max(midKrwOut, p2pKrwOut, koronaKrwOut, gmoneyKrwOut)
+  const maxLoss = Math.max(p2pLossPct, koronaLossPct, gmoneyLossPct)
 
   const krwData = [
     { label: "Mid-Market", value: midKrwOut, color: "bg-green-500", percentage: (midKrwOut / maxKrwOut) * 100 },
@@ -27,6 +31,12 @@ export function ComparisonChart({
       value: koronaKrwOut,
       color: "bg-orange-500",
       percentage: (koronaKrwOut / maxKrwOut) * 100,
+    },
+    {
+      label: "Gmoneytrans",
+      value: gmoneyKrwOut,
+      color: "bg-purple-500",
+      percentage: (gmoneyKrwOut / maxKrwOut) * 100,
     },
   ]
 
@@ -42,6 +52,12 @@ export function ComparisonChart({
       value: koronaLossPct,
       color: "bg-red-600",
       percentage: maxLoss > 0 ? (koronaLossPct / maxLoss) * 100 : 0,
+    },
+    {
+      label: "Gmoneytrans",
+      value: gmoneyLossPct,
+      color: "bg-red-700",
+      percentage: maxLoss > 0 ? (gmoneyLossPct / maxLoss) * 100 : 0,
     },
   ]
 

@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta name="theme-color" content="#10b981" />
@@ -52,15 +52,8 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.jpg" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.jpg" />
         <link rel="manifest" href="/manifest.json" />
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
-}
-        `}</style>
       </head>
-      <body>
+      <body className={GeistSans.className}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
