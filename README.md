@@ -10,12 +10,14 @@ A sophisticated currency exchange calculator for converting Russian Rubles (RUB)
 ## ✨ Features
 
 ### 🔄 Multiple Transfer Methods
+
 - **Mid-Market Rate**: Theoretical ideal exchange rate
 - **P2P Method**: Peer-to-peer cryptocurrency exchange (RUB→USDT→KRW)
 - **Korona + E9Pay**: Traditional remittance service combination
 - **Gmoneytrans**: Direct money transfer service
 
 ### 📊 Advanced Analytics
+
 - **Real-time Rate Comparison**: Compare all methods side-by-side
 - **Arbitrage Calculator**: Full-cycle arbitrage analysis (RUB→USDT→KRW→USDT→RUB)
 - **Loss Analysis**: Calculate losses vs mid-market rates
@@ -23,6 +25,7 @@ A sophisticated currency exchange calculator for converting Russian Rubles (RUB)
 - **Interactive Charts**: Visual comparison of exchange methods
 
 ### 🎨 User Experience
+
 - **Bilingual Support**: English and Russian interfaces
 - **Dark/Light Theme**: Automatic theme switching
 - **Responsive Design**: Mobile-first, works on all devices
@@ -30,6 +33,7 @@ A sophisticated currency exchange calculator for converting Russian Rubles (RUB)
 - **Local Storage**: Saves your preferences and inputs
 
 ### 🔧 Professional Features
+
 - **CSV Export**: Export calculations for record-keeping
 - **Copy Summary**: Quick sharing of results
 - **Auto-save**: Automatic saving of user inputs
@@ -84,18 +88,20 @@ A sophisticated currency exchange calculator for converting Russian Rubles (RUB)
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-username/rub-to-krw-calculator.git
    cd rub-to-krw-calculator
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -105,6 +111,7 @@ A sophisticated currency exchange calculator for converting Russian Rubles (RUB)
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -126,18 +133,21 @@ npm run start
 ## 💡 Usage
 
 ### Basic Currency Conversion
+
 1. Enter the RUB amount you want to convert
 2. Adjust exchange rates for different methods
 3. Compare results across all transfer methods
 4. View detailed loss analysis vs mid-market rates
 
 ### Arbitrage Analysis
+
 1. Navigate to the Arbitrage Calculator (`/arbitrage-calculator`)
 2. Input rates and fees for each step of the cycle
 3. Analyze potential profit/loss from full-cycle arbitrage
 4. View waterfall analysis of losses per step
 
 ### Customization
+
 - Toggle between English and Russian languages
 - Switch between light and dark themes
 - Save custom rate presets
@@ -146,9 +156,11 @@ npm run start
 ## 🔧 Configuration
 
 ### Environment Variables
+
 No environment variables are required for basic functionality.
 
 ### Customization
+
 - **Colors**: Modify CSS variables in `app/globals.css`
 - **Default Rates**: Update `defaultInputs` in respective page components
 - **Localization**: Add new languages in the `strings` objects
@@ -156,6 +168,7 @@ No environment variables are required for basic functionality.
 ## 📱 PWA Features
 
 The application is configured as a Progressive Web App with:
+
 - Offline functionality
 - App-like experience on mobile devices
 - Custom app icons and splash screens
@@ -175,7 +188,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with [v0.app](https://v0.app) for rapid prototyping
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
 - Icons from [Lucide](https://lucide.dev/)
 - Deployed on [Vercel](https://vercel.com/)
@@ -183,6 +195,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions:
+
 1. Check the [Issues](https://github.com/your-username/rub-to-krw-calculator/issues) page
 2. Create a new issue with detailed information
 3. For urgent matters, contact the maintainers directly

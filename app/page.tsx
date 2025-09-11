@@ -208,20 +208,24 @@ export default function RubKrwCalculator() {
   useEffect(() => {
     if (!mounted || typeof window === "undefined") return;
 
-    const savedInputs = localStorage.getItem("rub-krw-calc:inputs");
-    const savedTheme = localStorage.getItem("rub-krw-calc:theme");
+    try {
+      const savedInputs = localStorage.getItem("rub-krw-calc:inputs");
+      const savedTheme = localStorage.getItem("rub-krw-calc:theme");
 
-    if (savedInputs) {
-      try {
-        setInputs(JSON.parse(savedInputs));
-      } catch (e) {
-        console.error("Failed to parse saved inputs:", e);
+      if (savedInputs) {
+        try {
+          setInputs(JSON.parse(savedInputs));
+        } catch (e) {
+          console.error("Failed to parse saved inputs:", e);
+        }
       }
-    }
 
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
+      if (savedTheme === "dark") {
+        setDarkMode(true);
+        document.documentElement.classList.add("dark");
+      }
+    } catch (e) {
+      console.error("Error in localStorage effect:", e);
     }
   }, [mounted]);
 
@@ -406,10 +410,16 @@ Gmoneytrans: ${formatKRW(
     }
   };
 
-  const savedPresets =
-    mounted && typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("rub-krw-calc:presets") || "{}")
-      : {};
+  const savedPresets = useMemo(() => {
+    if (!mounted || typeof window === "undefined") return {};
+    
+    try {
+      return JSON.parse(localStorage.getItem("rub-krw-calc:presets") || "{}");
+    } catch (e) {
+      console.error("Failed to parse saved presets:", e);
+      return {};
+    }
+  }, [mounted]);
 
   if (!mounted) {
     return (
